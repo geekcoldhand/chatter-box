@@ -1,1 +1,8 @@
-<p>chat works!</p>
+<ul id="messages">
+  <li *ngFor="let msg of messages">{{ msg }}</li>
+</ul>
+
+<form id="form" (ngSubmit)="sendMessage()">
+  <input id="input" [(ngModel)]="message" name="message" autocomplete="off" />
+  <button type="submit">Send</button>
+</form>

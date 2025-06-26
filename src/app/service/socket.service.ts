@@ -9,7 +9,9 @@ export class SocketService {
     this.socket = io('https://chatter-box-socket.onrender.com');
   }
 
-  public getSocket(): Socket {
-    return this.socket;
+  sendMessage(message: string) {
+    this.socket.emit('chat message', message);
   }
+
+  
 }
